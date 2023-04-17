@@ -1,0 +1,1 @@
+The difference between git restore and git restore --staged is when we select the files for staging and if we want to discart the file then we use git restore and after staging if we want to discart we will use git restore --staged.
