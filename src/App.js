@@ -15,9 +15,9 @@ function App() {
 
   return (
     <div className="App">
-      <profile image ={src1} designation ="UI UX DEGINER" name ="Your Name" description ={description} />
-      <profile image ={src2} designation ="UI UX DEGINER" name ="Your Name" description ={description} />
-      <profile image ={src2} designation ="UI UX DEGINER" name ="Your Name" description ={description} />
+      <profile image ={src1} designation ="UI UX DEGINER" name ="Your Name" description ={description1} />
+      <profile image ={src2} designation ="UI UX DEGINER" name ="Your Name" description ={description2} />
+      <profile image ={src2} designation ="UI UX DEGINER" name ="Your Name" description ={description3} />
     </div>
   );
 }
