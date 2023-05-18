@@ -35,8 +35,8 @@ function Quiz() {
    
     const handleAnswer = (isCorrect) =>{
        if(isCorrect){
-        setScore(score+1)
-        setCorrect(correct+2)
+        setScore(score+2)
+        setCorrect(correct+1)
        }
        setClick(true)
     }
@@ -47,6 +47,11 @@ function Quiz() {
         setResult(false)
         setTimeRemaining(180)
     }
+    useEffect(() => {
+        if (timeRemaining===0){
+            setResult(true) 
+        }
+    },[timeRemaining])
   return (
     <>
     <h2>You Have 3mins to Solve this</h2>
