@@ -12,16 +12,21 @@ function Quiz() {
     const [click, setClick] = useState(false)
     const [timeRemaining, setTimeRemaining] = useState(180);
 
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+    
     useEffect(() => {
         const intervalId = setInterval(() => {
             setTimeRemaining(prevTime => prevTime - 1);
         }, 1000);
 
-        return () => clearInterval(intervalId);
-    }, []);
-
-    const minutes = Math.floor(timeRemaining / 60);
-    const seconds = timeRemaining % 60;
+        return () => {
+            clearInterval(intervalId);
+            if (timeRemaining === 0) {
+                setResult(true);
+            }
+        };
+    }, [timeRemaining]);
    
     const handleNext = () => {
         setClick(false)
@@ -47,11 +52,8 @@ function Quiz() {
         setResult(false)
         setTimeRemaining(180)
     }
-    useEffect(() => {
-        if (timeRemaining===0){
-            setResult(true) 
-        }
-    },[timeRemaining])
+
+   
   return (
     <>
     <h2>You Have 3mins to Solve this</h2>
